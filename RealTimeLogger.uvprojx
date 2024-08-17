@@ -393,6 +393,38 @@
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>drv_GPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\drv_GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>drv_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drv_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drv_clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\drv_clock.h</FilePath>
+            </File>
+            <File>
+              <FileName>drv_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drv_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\drv_timer.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>System</GroupName>

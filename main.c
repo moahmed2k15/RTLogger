@@ -1,31 +1,21 @@
-#include "stm32l475xx.h"
 #include <stdint.h>
+#include "stm32l475xx.h"
+#include "drv_GPIO.h"
+#include "drv_clock.h"
 
-
-
-#define BUTTON_PIN  (uint32_t)(1<<13U)
-#define uRESET      0U
-#define uSET        1U
-
+GPIO_TypeDef * PORTA = ((GPIO_TypeDef *) GPIOA_BASE);
 int main(void)
 {
-	//LED1_PORT_ENABLE
-	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;
-	//LED1_AS_OUTPUT
-	GPIOA->MODER &= ~(GPIO_MODER_MODE5);
-	GPIOA->MODER |= GPIO_MODER_MODE5_0;
-	//BUTTON_PORT_ENABLE
-	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
-	//BUTTON_AS_INPUT
-	GPIOC->MODER &= ~(GPIO_MODER_MODE13);
+	
+	//drv_GPIO_init_LED(BOTH);
+	drv_GPIO_init_button();
+	//drv_GPIO_set_LED(LED1, true);
+	//drv_GPIO_set_LED(LED2, false);
+	drv_GPIO_blink_LED(LED1, 10000);
 	
 	while(1){
-		if((GPIOC->IDR & BUTTON_PIN) == uRESET){
-			GPIOA->BSRR = GPIO_BSRR_BS5;
-		}
-		else{
-			GPIOA->BSRR = GPIO_BSRR_BR5;
-		}
+		PORTA->MODER |= 1;
+			
 	}
 
 }
